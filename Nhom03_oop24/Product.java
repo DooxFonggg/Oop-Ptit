@@ -4,17 +4,14 @@
  */
 package Nhom03_oop24;
 
-
 /**
  *
  * @author phong
  */
-import ExamMiddle.;
-public class test {
-    public static void main(String[] args) {
-        Account ac = new Account();
-        ac.display();
-    }
-   
 
+public class Product {
+    String s = "test";
+    public void Protected() {
+        System.out.println(s);
+    }
 }
