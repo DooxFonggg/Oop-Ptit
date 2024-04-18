@@ -45,5 +45,6 @@ public class OOP002 {
             System.out.println(r.toString());
             t--;
         }
+        input.close();
     }
 }
