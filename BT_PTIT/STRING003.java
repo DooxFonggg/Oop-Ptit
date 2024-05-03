@@ -10,18 +10,16 @@ import java.util.Scanner;
  *
  * @author phong
  */
-public class STRING002 {
+public class STRING003 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int t = input.nextInt();
         input.nextLine();
         while(t-- > 0) {
-             String s1 = input.nextLine();
-            String s2 = input.nextLine();
-            boolean res = s1.contains(s2);
+            String s1 = input.nextLine().toLowerCase();
+            String s2 = input.nextLine().toLowerCase();
+            boolean res = s1.equals(s2);
             System.out.println(res);
         }
-        input.close();
     }
-    
 }
