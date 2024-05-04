@@ -4,6 +4,7 @@
  */
 package BT_PTIT;
 
+import com.sun.source.tree.TryTree;
 import java.util.Scanner;
 
 /**
@@ -19,20 +20,19 @@ class NotJavaFileException extends Exception {
 }
 
 class check {
-    public static int CheckFileExtension(String file) {
+    public static void CheckFileExtension(String file) {
         try {
             if(file == null || file.isEmpty()) {
                 throw new NotJavaFileException("Not java file exception.Mark is -1");
             }
             else if(file.endsWith(".java")) {
-                return 1;
+                System.out.println(1);
             }
             else {
-                return 0;
+                System.out.println(0);
             }
         }catch(NotJavaFileException fileName) {
             System.out.println(fileName.getMessage());
-            return -1;
         }
     }
 }
@@ -43,10 +43,7 @@ public class EXCEPTION002 {
         input.nextLine();
         while(t-- > 0) {
             String fileName = input.nextLine();
-            int n = check.CheckFileExtension(fileName);
-            if(n != -1) {
-                System.out.println(n);
-            }
+                check.CheckFileExtension(fileName);
             
             
         }
