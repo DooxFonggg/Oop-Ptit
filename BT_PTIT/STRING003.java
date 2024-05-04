@@ -10,6 +10,12 @@ import java.util.Scanner;
  *
  * @author phong
  */
+class paper {
+    int cnt;
+    void check() {
+        cnt
+    }
+}
 public class STRING003 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -19,7 +25,7 @@ public class STRING003 {
             String s1 = input.nextLine().toLowerCase();
             String s2 = input.nextLine().toLowerCase();
             boolean res = s1.equals(s2);
-            System.out.println(res);
+            System.out.println();
         }
     }
 }

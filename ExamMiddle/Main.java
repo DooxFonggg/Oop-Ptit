@@ -1,61 +1,32 @@
-package ExamMiddle;
-
 import java.util.Scanner;
 
-class NameNotValidException extends Exception {
-    public NameNotValidException(String message) {
-        super(message);
-    }
-}
-
-class AgeNotValidException extends Exception {
-    public AgeNotValidException(String message) {
-        super(message);
-    }
-}
-
-class Person {
-    private String name;
-    private int age;
-
-    public Person(String name, int age) throws NameNotValidException, AgeNotValidException {
-        if (name == null || name.isEmpty() || name.length() > 40) {
-            throw new NameNotValidException("Name is not valid");
-        }
-        if (age < 0 || age > 120) {
-            throw new AgeNotValidException("Age is not valid");
-        }
+class Paper {
+    String name;
+    static String nn;
+    public static int cnt = 0;
+    
+    public Paper(String name, String nn) {
         this.name = name;
-        this.age = age;
+        this.nn = nn;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
+    
+    public static void check() {
+        if(nn.equals("VN")) {
+            cnt++;
+        }
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int testCases = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
-        for (int i = 0; i < testCases; i++) {
-            String name = scanner.nextLine();
-            int age = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
-            try {
-                Person person = new Person(name, age);
-                System.out.println("Name: " + person.getName() + "--Age: " + person.getAge());
-            } catch (NameNotValidException e) {
-                System.out.println(e.getMessage());
-            } catch (AgeNotValidException e) {
-                System.out.println(e.getMessage());
-            }
+        Scanner input = new Scanner(System.in);
+        while(input.hasNextLine()) {
+            String[] s = input.nextLine().split(" ");
+            String name = s[0];
+            String nn = s[1];
+            Paper p = new Paper(name, nn);
+            Paper.check(); // Passing 'nn' as parameter
+            System.out.println(Paper.cnt);
         }
-        scanner.close();
     }
 }
